@@ -1,0 +1,23 @@
+# Test dependencies for Fibonacci project
+# Install with: pip install -r requirements-test.txt
+
+# Core testing framework
+pytest>=7.0.0
+
+# Enhanced testing capabilities
+pytest-cov>=4.0.0       # Coverage reporting
+pytest-mock>=3.10.0     # Enhanced mocking capabilities
+pytest-timeout>=2.1.0   # Test timeout handling
+pytest-xdist>=3.2.0     # Parallel test execution
+
+# Development and debugging tools
+pytest-pdb>=0.2.0       # PDB integration for debugging tests
+pytest-sugar>=0.9.6     # Enhanced test output formatting
+
+# Performance testing (optional)
+pytest-benchmark>=4.0.0 # Performance benchmarking for tests
+
+# Code quality tools (optional but recommended)
+# flake8>=6.0.0          # Code style checking
+# black>=23.0.0          # Code formatting
+# mypy>=1.0.0            # Type checking

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a project scaffold workspace designed for general development. The repository contains a basic folder structure with `src/`, `tests/`, and `docs/` directories, currently empty and ready for development.
+This is a Python mathematics project containing implementations of mathematical sequence algorithms (Fibonacci and factorial). The project demonstrates multiple algorithmic approaches, comprehensive testing, and professional Python development practices.
 
 ## Repository Structure
 
@@ -12,42 +12,90 @@ This is a project scaffold workspace designed for general development. The repos
 ScaffoldWS/
 ├── .github/
 │   └── copilot-instructions.md  # GitHub Copilot workflow instructions
-├── src/                         # Source code (currently empty)
-├── tests/                       # Test files (currently empty)
-├── docs/                        # Documentation (currently empty)
-├── .gitignore                   # Git ignore rules for Python and Node.js
-└── README.md                    # Basic project description
+├── src/                         # Source code
+│   ├── factorial.py             # Factorial calculation (iterative & recursive)
+│   └── fibonacci.py             # Fibonacci sequence generator (4 implementations)
+├── tests/                       # Comprehensive test suite
+│   ├── test_fibonacci.py        # Unit tests for Fibonacci methods
+│   ├── test_fibonacci_integration.py  # Integration tests
+│   ├── conftest.py             # Pytest configuration and fixtures
+│   └── README.md               # Test documentation
+├── docs/                       # Documentation (currently empty)
+├── pytest.ini                 # Test configuration
+├── run_tests.py               # Test runner utility
+├── verify_tests.py            # Test setup verification
+├── simple_test_demo.py        # Working test demonstration
+├── requirements-test.txt      # Test dependencies
+├── .gitignore                 # Git ignore rules
+└── README.md                  # Project description
 ```
+
+## Current Implementation
+
+### **Python Programs:**
+
+1. **Fibonacci Sequence Generator** (`src/fibonacci.py`)
+   - Multiple implementations: iterative, recursive, memoized, generator
+   - Interactive CLI interface with benchmarking
+   - Comprehensive error handling and input validation
+   - Time/space complexity analysis in documentation
+
+2. **Factorial Calculator** (`src/factorial.py`)
+   - Iterative and recursive implementations
+   - Interactive user interface
+   - Complete error handling and type hints
+
+### **Testing Framework:**
+- **pytest-based** comprehensive test suite
+- **100+ test cases** covering all methods and edge cases
+- **Performance testing** and benchmarking integration
+- **Integration tests** for CLI interfaces
+- **Automated test runners** and verification scripts
 
 ## Development Workflow
 
-This repository follows the GitHub Copilot instructions defined in `.github/copilot-instructions.md`, which outlines a systematic checklist for project setup:
+### **Testing Commands:**
+```bash
+# Run all tests
+python run_tests.py
 
-1. Clarify project requirements (language, frameworks)
-2. Scaffold the project structure
-3. Customize according to requirements
-4. Install required extensions
-5. Compile and resolve dependencies
-6. Create and run tasks
-7. Launch the project
-8. Ensure documentation is complete
+# Run specific test categories
+pytest -m "not slow"              # Skip performance tests
+pytest tests/test_fibonacci.py   # Unit tests only
+pytest -v                        # Verbose output
+```
 
-## Key Guidelines from Copilot Instructions
+### **Program Execution:**
+```bash
+# Fibonacci generator
+python src/fibonacci.py 10
+python src/fibonacci.py 15 sequence
 
-- Use current directory (`.`) as project root for all operations
-- Keep communication concise and focused
-- Avoid verbose explanations unless requested
-- Only install extensions specified by project setup tools
-- For unspecified projects, assume "Hello World" as starting point
-- Avoid unnecessary media files or external integrations
-- Update progress systematically through checklist items
+# Factorial calculator  
+python src/factorial.py
+```
 
-## Current State
+## Code Quality Standards
 
-The repository is in its initial scaffold state with:
-- Empty source, test, and documentation directories
-- Basic .gitignore configured for Python and Node.js projects
-- Generic README placeholder text
-- GitHub Copilot workflow instructions in place
+- **Type hints** throughout all code
+- **Comprehensive docstrings** with complexity analysis
+- **Error handling** with custom exception classes
+- **Professional structure** with classes and separation of concerns
+- **Performance awareness** with algorithmic complexity documentation
+- **Interactive interfaces** with user-friendly error messages
 
-When working with this repository, determine the project type and requirements first, then follow the systematic workflow defined in the copilot instructions to properly scaffold and set up the development environment.
+## Testing Strategy
+
+- **Unit tests** for individual methods
+- **Integration tests** for CLI interfaces
+- **Performance benchmarks** for algorithm comparison
+- **Edge case coverage** (zero, negative, large numbers)
+- **Error scenario testing** for exception handling
+
+## Key Guidelines
+
+- Follow existing code patterns and documentation style
+- Maintain comprehensive test coverage for new features
+- Use type hints and docstrings for all functions
+- Include performance considerations in implementations
+- Provide both educational and practical algorithm variants
